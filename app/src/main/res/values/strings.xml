@@ -1,0 +1,59 @@
+<resources>
+    <string name="app_name">Tic Tac Toe</string>
+    <string name="app_name_for_menus">Крестики нолики</string>
+
+    <!-- Start Button -->
+    <string name="start">Начать</string>
+    <string name="again">Заново</string>
+    <string name="next">Продолжить</string>
+
+    <!-- Resetting Points Button -->
+    <string name="updateScore">Сброс счёта</string>
+
+    <!-- TextView Score Player 1 -->
+    <string name="scorePlayer1">Счёт игрока 1:</string>
+
+    <!-- TextView Score Player 2 -->
+    <string name="scorePlayer2">Счёт игрока 2:</string>
+
+    <!-- TextView Player Move -->
+    <string name="waiting">Ожидание начала...</string>
+    <string name="moveP1X">Ходит игрок 1 (Крестик)</string>
+    <string name="moveP1O">Ходит игрок 1 (Нолик)</string>
+    <string name="moveP2X">Ходит игрок 2 (Крестик)</string>
+    <string name="moveP2O">Ходит игрок 2 (Нолик)</string>
+    <string name="winP1X">Победил игрок 1 (Крестик)</string>
+    <string name="winP1O">Победил игрок 1 (Нолик)</string>
+    <string name="winP2X">Победил игрок 2 (Крестик)!</string>
+    <string name="winP2O">Победил игрок 2 (Нолик)!</string>
+
+    <!-- Settings -->
+    <string name="figureMoveSelection">Выбор первой фигуры</string>
+    <string name="playerMoveSelection">Выбор первого игрока</string>
+    <string name="title_activity_settings">Настройки</string>
+
+    <!-- Another -->
+    <string name="zero">0</string>
+    <string name="nothing"> </string>
+    <string name="version">Version 1.2</string>
+    <string name="creator">By HellGuy39</string>
+    <string name="X">X</string>
+    <string name="O">O</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+    <string name="temporary_settings_bar_header">Здесь будут настройки, но не сегодня.</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+</resources>
