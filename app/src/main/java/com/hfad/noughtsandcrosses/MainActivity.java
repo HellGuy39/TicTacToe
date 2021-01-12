@@ -5,17 +5,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button but1,but2,but3,but4,but5,but6,but7,but8,but9,startBut,resPoints;
+    Button startBut,resPoints;
     TextView playerMove,scoreP1,scoreP2;
+    ImageButton but1,but2,but3,but4,but5,but6,but7,but8,but9;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,10 +67,15 @@ public class MainActivity extends AppCompatActivity {
             Intent settings = new Intent(this, SettingsActivity.class);
             startActivity(settings);
             return true;
+        } else if (id == R.id.action_help) {
+            Intent help = new Intent(this, HelpActivity.class);
+            startActivity(help);
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
 
     /*@SuppressLint("MissingSuperCall")
     @Override
@@ -105,7 +113,8 @@ public class MainActivity extends AppCompatActivity {
         moves = 9;
         winCheckerAllFalse();
         playerNow = false;
-        buttonTextCleaner();
+        //colorCleaner();
+        ActualFiguresOnButtonsCleaner();
         //gameActivity = true;
         playerNowTextSwitcher();
         buttonsOn();
@@ -115,11 +124,11 @@ public class MainActivity extends AppCompatActivity {
         but1.setClickable(false);
         if (playerNow == false) {
             player1But1 = true;
-            but1.setText("X");
+            but1.setImageResource(R.drawable.x);
             playerNow = true;
         } else if (playerNow == true) {
             player2But1 = true;
-            but1.setText("O");
+            but1.setImageResource(R.drawable.o);
             playerNow = false;
         }
         moves--;
@@ -131,11 +140,11 @@ public class MainActivity extends AppCompatActivity {
         but2.setClickable(false);
         if (playerNow == false) {
             player1But2 = true;
-            but2.setText("X");
+            but2.setImageResource(R.drawable.x);
             playerNow = true;
         } else if (playerNow == true) {
             player2But2 = true;
-            but2.setText("O");
+            but2.setImageResource(R.drawable.o);
             playerNow = false;
         }
         moves--;
@@ -147,11 +156,11 @@ public class MainActivity extends AppCompatActivity {
         but3.setClickable(false);
         if (playerNow == false) {
             player1But3 = true;
-            but3.setText("X");
+            but3.setImageResource(R.drawable.x);
             playerNow = true;
         } else if (playerNow == true) {
             player2But3 = true;
-            but3.setText("O");
+            but3.setImageResource(R.drawable.o);
             playerNow = false;
         }
         moves--;
@@ -163,11 +172,13 @@ public class MainActivity extends AppCompatActivity {
         but4.setClickable(false);
         if (playerNow == false) {
             player1But4 = true;
-            but4.setText("X");
+            //but4.setText("X");
+            but4.setImageResource(R.drawable.x);
             playerNow = true;
         } else if (playerNow == true) {
             player2But4 = true;
-            but4.setText("O");
+            but4.setImageResource(R.drawable.o);
+            //but4.setText("O");
             playerNow = false;
         }
         moves--;
@@ -179,11 +190,11 @@ public class MainActivity extends AppCompatActivity {
         but5.setClickable(false);
         if (playerNow == false) {
             player1But5 = true;
-            but5.setText("X");
+            but5.setImageResource(R.drawable.x);
             playerNow = true;
         } else if (playerNow == true) {
             player2But5 = true;
-            but5.setText("O");
+            but5.setImageResource(R.drawable.o);
             playerNow = false;
         }
         moves--;
@@ -195,11 +206,11 @@ public class MainActivity extends AppCompatActivity {
         but6.setClickable(false);
         if (playerNow == false) {
             player1But6 = true;
-            but6.setText("X");
+            but6.setImageResource(R.drawable.x);
             playerNow = true;
         } else if (playerNow == true) {
             player2But6 = true;
-            but6.setText("O");
+            but6.setImageResource(R.drawable.o);
             playerNow = false;
         }
         moves--;
@@ -211,11 +222,11 @@ public class MainActivity extends AppCompatActivity {
         but7.setClickable(false);
         if (playerNow == false) {
             player1But7 = true;
-            but7.setText("X");
+            but7.setImageResource(R.drawable.x);
             playerNow = true;
         } else if (playerNow == true) {
             player2But7 = true;
-            but7.setText("O");
+            but7.setImageResource(R.drawable.o);
             playerNow = false;
         }
         moves--;
@@ -227,11 +238,11 @@ public class MainActivity extends AppCompatActivity {
         but8.setClickable(false);
         if (playerNow == false) {
             player1But8 = true;
-            but8.setText("X");
+            but8.setImageResource(R.drawable.x);
             playerNow = true;
         } else if (playerNow == true) {
             player2But8 = true;
-            but8.setText("O");
+            but8.setImageResource(R.drawable.o);
             playerNow = false;
         }
         moves--;
@@ -243,11 +254,11 @@ public class MainActivity extends AppCompatActivity {
         but9.setClickable(false);
         if (playerNow == false) {
             player1But9 = true;
-            but9.setText("X");
+            but9.setImageResource(R.drawable.x);
             playerNow = true;
         } else if (playerNow == true) {
             player2But9 = true;
-            but9.setText("O");
+            but9.setImageResource(R.drawable.o);
             playerNow = false;
         }
         moves--;
@@ -280,6 +291,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void winChecker() {
+        // player 1
         if ((player1But1 && player1But2 && player1But3) == true ||
             (player1But4 && player1But5 && player1But6) == true ||
             (player1But7 && player1But8 && player1But9) == true ||
@@ -292,11 +304,13 @@ public class MainActivity extends AppCompatActivity {
             scoreP1int++;
             scoreP1.setText(Integer.toString(scoreP1int));
             moves = 9;
+            //winnerColor();
             buttonsOff();
             winCheckerAllFalse();
-            buttonTextCleaner();
+            //buttonTextCleaner();
             startBut.setText("Начать");
         } else if (
+        //player 2
             (player2But1 && player2But2 && player2But3) == true ||
             (player2But4 && player2But5 && player2But6) == true ||
             (player2But7 && player2But8 && player2But9) == true ||
@@ -309,16 +323,18 @@ public class MainActivity extends AppCompatActivity {
             scoreP2int++;
             scoreP2.setText(Integer.toString(scoreP2int));
             moves = 9;
+            //winnerColor();
             buttonsOff();
             winCheckerAllFalse();
-            buttonTextCleaner();
+            //buttonTextCleaner();
             startBut.setText("Начать");
         } else if (moves == 0) {
+            // Ничья
             playerMove.setText("Ничья");
             moves = 9;
             buttonsOff();
             winCheckerAllFalse();
-            buttonTextCleaner();
+            //buttonTextCleaner();
             startBut.setText("Начать");
         }
     }
@@ -347,16 +363,16 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void buttonTextCleaner() {
-        but1.setText(" ");
-        but2.setText(" ");
-        but3.setText(" ");
-        but4.setText(" ");
-        but5.setText(" ");
-        but6.setText(" ");
-        but7.setText(" ");
-        but8.setText(" ");
-        but9.setText(" ");
+    public void ActualFiguresOnButtonsCleaner() {
+        but1.setImageResource(android.R.color.transparent);
+        but2.setImageResource(android.R.color.transparent);
+        but3.setImageResource(android.R.color.transparent);
+        but4.setImageResource(android.R.color.transparent);
+        but5.setImageResource(android.R.color.transparent);
+        but6.setImageResource(android.R.color.transparent);
+        but7.setImageResource(android.R.color.transparent);
+        but8.setImageResource(android.R.color.transparent);
+        but9.setImageResource(android.R.color.transparent);
     }
 
     public void playerNowTextSwitcher() {
@@ -365,6 +381,68 @@ public class MainActivity extends AppCompatActivity {
         } else if (playerNow == true) {
             playerMove.setText("Ходит игрок 2 (Нолик)");
         }
+    }
+
+    public void winnerColor() {
+
+        // С 1.3.1 - не используется
+        // Кринжовая херь, лучше не смотреть
+
+        if ((player1But1 && player1But2 && player1But3) == true ||
+                (player2But1 && player2But2 && player2But3) == true) {
+            but1.setBackgroundColor(getResources().getColor(R.color.green));
+            but2.setBackgroundColor(getResources().getColor(R.color.green));
+            but3.setBackgroundColor(getResources().getColor(R.color.green));
+        } else if ((player1But4 && player1But5 && player1But6) == true ||
+                (player2But4 && player2But5 && player2But6) == true) {
+            but4.setBackgroundColor(getResources().getColor(R.color.green));
+            but5.setBackgroundColor(getResources().getColor(R.color.green));
+            but6.setBackgroundColor(getResources().getColor(R.color.green));
+        } else if ((player1But7 && player1But8 && player1But9) == true ||
+                (player2But7 && player2But8 && player2But9) == true) {
+            but7.setBackgroundColor(getResources().getColor(R.color.green));
+            but8.setBackgroundColor(getResources().getColor(R.color.green));
+            but9.setBackgroundColor(getResources().getColor(R.color.green));
+        } else if ((player1But1 && player1But4 && player1But7) == true ||
+                (player2But1 && player2But4 && player2But7) == true) {
+            but1.setBackgroundColor(getResources().getColor(R.color.green));
+            but4.setBackgroundColor(getResources().getColor(R.color.green));
+            but7.setBackgroundColor(getResources().getColor(R.color.green));
+        } else if ((player1But2 && player1But5 && player1But8) == true ||
+                (player2But2 && player2But5 && player2But8) == true) {
+            but2.setBackgroundColor(getResources().getColor(R.color.green));
+            but5.setBackgroundColor(getResources().getColor(R.color.green));
+            but8.setBackgroundColor(getResources().getColor(R.color.green));
+        } else if ((player1But3 && player1But6 && player1But9) == true ||
+                (player2But3 && player2But6 && player2But9) == true) {
+            but3.setBackgroundColor(getResources().getColor(R.color.green));
+            but6.setBackgroundColor(getResources().getColor(R.color.green));
+            but9.setBackgroundColor(getResources().getColor(R.color.green));
+        } else if ((player1But1 && player1But5 && player1But9) == true ||
+                (player2But1 && player2But5 && player2But9) == true) {
+            but1.setBackgroundColor(getResources().getColor(R.color.green));
+            but5.setBackgroundColor(getResources().getColor(R.color.green));
+            but9.setBackgroundColor(getResources().getColor(R.color.green));
+        } else if ((player1But7 && player1But5 && player1But3) == true ||
+                (player2But7 && player2But5 && player2But3) == true) {
+            but7.setBackgroundColor(getResources().getColor(R.color.green));
+            but5.setBackgroundColor(getResources().getColor(R.color.green));
+            but3.setBackgroundColor(getResources().getColor(R.color.green));
+        }
+
+    }
+
+    public void colorCleaner() {
+        // С 1.3.1 - не используется
+        but1.setBackgroundColor(getResources().getColor(R.color.design_default_color_on_secondary));
+        but2.setBackgroundColor(getResources().getColor(R.color.design_default_color_on_secondary));
+        but3.setBackgroundColor(getResources().getColor(R.color.design_default_color_on_secondary));
+        but4.setBackgroundColor(getResources().getColor(R.color.design_default_color_on_secondary));
+        but5.setBackgroundColor(getResources().getColor(R.color.design_default_color_on_secondary));
+        but6.setBackgroundColor(getResources().getColor(R.color.design_default_color_on_secondary));
+        but7.setBackgroundColor(getResources().getColor(R.color.design_default_color_on_secondary));
+        but8.setBackgroundColor(getResources().getColor(R.color.design_default_color_on_secondary));
+        but9.setBackgroundColor(getResources().getColor(R.color.design_default_color_on_secondary));
     }
 
 }

@@ -30,12 +30,19 @@
     <!-- Settings -->
     <string name="figureMoveSelection">Выбор первой фигуры</string>
     <string name="playerMoveSelection">Выбор первого игрока</string>
+
+    <!-- Menu -->
     <string name="title_activity_settings">Настройки</string>
+    <string name="title_activity_help">Помощь</string>
+
+    <!-- Help Activity -->
+    <string name="needHelp">Помогите!</string>
+    <string name="readyToHelp">Всегда рады помочь.</string>
 
     <!-- Another -->
     <string name="zero">0</string>
     <string name="nothing"> </string>
-    <string name="version">Version 1.2</string>
+    <string name="version">Version 1.3.3 (Unstable build)</string>
     <string name="creator">By HellGuy39</string>
     <string name="X">X</string>
     <string name="O">O</string>
